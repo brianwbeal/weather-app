@@ -1,3 +1,7 @@
-$(document).ready(() => {
 
+
+$(document).ready(() => {
+  $.get({
+    
+  });
 });
