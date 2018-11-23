@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
   // api key
-  const apiKey = "9d0c147959c5e885689aaabd07e7b3ff";
+  const apiKey = "";
   const cityID = "5746545";  // portland, or, usa
 
   $.get({
@@ -26,6 +26,25 @@ $(document).ready(() => {
 
 
       // icon
+      let currentWeatherCode = result.weather[0].id;
+      let currentConditions = "";
+      if (currentWeatherCode >= 200 && currentWeatherCode <= 232) {
+        currentConditions = "thunderstorm";
+      } else if (currentWeatherCode >= 300 && currentWeatherCode <= 321) {
+        currentConditions = "drizzle";
+      } else if (currentWeatherCode >= 500 && currentWeatherCode <= 531) {
+        currentConditions = "rainy";
+      } else if (currentWeatherCode >= 600 && currentWeatherCode <= 622) {
+        currentConditions = "snow";
+      } else if (currentWeatherCode === 800) {
+        currentConditions = "clear";
+      } else if (currentWeatherCode >= 801 && currentWeatherCode <= 804) {
+        currentConditions = "cloudy";
+      } else {
+        console.log("conditions unavailable");
+      }
+      console.log(currentConditions);
+
 
       // temperature
       let currentTemp = Math.round(result.main.temp);
