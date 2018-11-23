@@ -11,7 +11,7 @@ $(document).ready(() => {
 
       // city
       let currentCity = result.name;
-      console.log(currentCity);
+      $("#currentCity").text(currentCity);
 
       // time
       let currentTime = new Date;
@@ -20,39 +20,38 @@ $(document).ready(() => {
       if (currentHour > 12) {
         currentHour = currentHour - 12;
         ampmCurrent = "pm";
+      } else if (currentHour === 12) {
+        ampmCurrent = "pm";
       }
       let currentMinute = currentTime.getMinutes();
-      console.log(`${currentHour}:${currentMinute} ${ampmCurrent}`);
-
+      if (currentMinute < 10) {
+        currentMinute = (`0${currentMinute}`);
+      }
+      $("#currentTime").text(`${currentHour}:${currentMinute} ${ampmCurrent}`);
 
       // icon
       let currentWeatherCode = result.weather[0].id;
       let currentConditions = "";
-      if (currentWeatherCode >= 200 && currentWeatherCode <= 232) {
-        currentConditions = "thunderstorm";
-      } else if (currentWeatherCode >= 300 && currentWeatherCode <= 321) {
+      if (currentWeatherCode >= 300 && currentWeatherCode <= 321) {
         currentConditions = "drizzle";
       } else if (currentWeatherCode >= 500 && currentWeatherCode <= 531) {
         currentConditions = "rainy";
       } else if (currentWeatherCode >= 600 && currentWeatherCode <= 622) {
         currentConditions = "snow";
       } else if (currentWeatherCode === 800) {
-        currentConditions = "clear";
+        currentConditions = "sunny";
       } else if (currentWeatherCode >= 801 && currentWeatherCode <= 804) {
         currentConditions = "cloudy";
-      } else {
-        console.log("conditions unavailable");
       }
-      console.log(currentConditions);
-
+      $("#weather-image").attr("src", `img/weather-app-${currentConditions}.png`);
 
       // temperature
       let currentTemp = Math.round(result.main.temp);
-      console.log(currentTemp);
+      $("#currentTemp").prepend(currentTemp);
 
       // description
       let currentDescription = result.weather[0].description;
-      console.log(currentDescription);
+      $("#currentConditions").text(currentDescription);
 
       // sunrise time
       let ampmRise = "am";
@@ -64,7 +63,7 @@ $(document).ready(() => {
       }
       let sunriseMinutes = sunriseTime.getMinutes();
       let sunrise = `${sunriseHours}:${sunriseMinutes}${ampmRise}`;
-      console.log(sunrise);
+      $("#sunriseTime").text(sunrise);
 
       // sunset time
       let ampmSet = "am";
@@ -76,19 +75,19 @@ $(document).ready(() => {
       }
       let sunsetMinutes = sunsetTime.getMinutes();
       let sunset = `${sunsetHours}:${sunsetMinutes}${ampmSet}`;
-      console.log(sunset);
+      $("#sunsetTime").text(sunset);
 
       // wind
       let windSpeed = Math.round(result.wind.speed);
-      console.log(windSpeed, "mph");
+      $("#currentWind").text(`${windSpeed}mph`);
 
       // high temperature
       let tempMax = Math.round(result.main.temp_max);
-      console.log(tempMax);
+      $("#todayHigh").prepend(tempMax)
 
       // low temperature
       let tempMin = Math.round(result.main.temp_min);
-      console.log(tempMin);
+      $("#todayLow").prepend(tempMin)
 
     },
     error: (error) => {
