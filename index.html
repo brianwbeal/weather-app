@@ -7,6 +7,7 @@
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700" rel="stylesheet"><!-- google font call -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"><!-- fontawesome -->
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!-- jquery -->
     <script src="scripts.js"></script>
@@ -15,7 +16,7 @@
     <div class="main">
       <div><!-- container -->
 
-        <div class="heading"><!-- flex-column -->
+        <div class="heading">
           <div class="city">
             <h1 id="currentCity">portland , or</h1>
           </div>
@@ -26,7 +27,6 @@
 
         <div class="icon">
           <div class="icon-frame">
-            <!-- png -->
             <img id="weather-image" src="">
           </div>
         </div>
@@ -46,7 +46,7 @@
             <h5>sunset<span id="sunsetTime"></span></h5><!-- span {display:block;} -->
           </div>
           <div class="wind"><!-- flex column -->
-            <i></i>
+            <i class="fas fa-wind"></i>
             <h5>wind<span id="currentWind"></span></h5><!-- span {display:block;} -->
           </div>
           <div class="highs-lows"><!-- flex column -->

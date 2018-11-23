@@ -3,3 +3,113 @@
   padding: 0;
   box-sizing: border-box;
 }
+.container {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 400px;
+  background-color: whitesmoke;
+  min-height: 100vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+span,
+div {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: lowercase;
+  color: black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+p,
+a,
+li,
+span,
+div {
+  font-weight: 100;
+}
+.main {
+  text-align: center;
+}
+.main > div {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 400px;
+  background-color: whitesmoke;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+.heading {
+  margin-bottom: 60px;
+}
+.heading .city > h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.heading .time > h2 {
+  font-size: 15px;
+  font-weight: 400;
+}
+.icon {
+  margin-bottom: 60px;
+}
+.icon .icon-frame > img {
+  width: 200px;
+}
+.current {
+  margin-bottom: 60px;
+}
+.current .temperature {
+  margin-bottom: 10px;
+}
+.current .temperature > h3 {
+  font-size: 40px;
+  font-weight: 400;
+}
+.current .temperature > h3 > span {
+  font-weight: 100;
+}
+.current .conditions > h4 {
+  font-size: 15px;
+  font-weight: 400;
+}
+.bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.bottom-row > div > i {
+  font-size: 15px;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+.bottom-row > div > h5 {
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 100;
+}
+.bottom-row > div > h5:first-child {
+  margin-bottom: 15px;
+}
+.bottom-row > div > h5 > span {
+  font-weight: 400;
+  display: block;
+}

@@ -8,5 +8,168 @@
   box-sizing: border-box;
 }
 
+// container mixin
+.container {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 400px;
+  background-color: whitesmoke;
+  min-height: 100vh;
+}
+
+// font defaults
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+span,
+div {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: lowercase;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+p,
+a,
+li,
+span,
+div {
+  font-weight: 100;
+}
+
+
+
+
+// app styles
+.main {
+  text-align: center;
+
+  >div {
+    .container;
+    padding-top: 60px;
+  }
+}
+
+.heading {
+  margin-bottom: 60px;
+
+  .city {
+    >h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .time {
+    >h2 {
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+}
+
+.icon {
+  margin-bottom: 60px;
+
+  .icon-frame {
+    >img {
+      width: 200px;
+    }
+  }
+}
+
+.current {
+  margin-bottom: 60px;
+
+  .temperature {
+    margin-bottom: 10px;
+
+    >h3 {
+      font-size: 40px;
+      font-weight: 400;
+
+      >span {
+        font-weight: 100;
+      }
+    }
+  }
+  .conditions {
+    >h4 {
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+}
+
+.bottom-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  >div {
+    >i {
+      font-size: 15px;
+      line-height: 30px;
+      margin-bottom: 15px;
+    }
+
+    >h5 {
+      font-size: 15px;
+      line-height: 30px;
+      font-weight: 100;
+
+      &:first-child {
+        margin-bottom: 15px;
+      }
+
+      >span {
+        font-weight: 400;
+        display: block;
+
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //
