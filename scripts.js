@@ -30,8 +30,7 @@ $(document).ready(() => {
       $("#currentTime").text(`${currentHour}:${currentMinute} ${ampmCurrent}`);
 
       // icon
-      // let currentWeatherCode = result.weather[0].id;
-      let currentWeatherCode = 321;
+      let currentWeatherCode = result.weather[0].id;
       let currentConditions = "";
       if (currentWeatherCode >= 300 && currentWeatherCode <= 321) {
         currentConditions = "drizzle";
