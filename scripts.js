@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
   // api key
-  const apiKey = "";
+  const apiKey = "9d0c147959c5e885689aaabd07e7b3ff";
   const cityID = "5746545";  // portland, or, usa
 
   $.get({
@@ -14,6 +14,16 @@ $(document).ready(() => {
       console.log(currentCity);
 
       // time
+      let currentTime = new Date;
+      let ampmCurrent = "am"
+      let currentHour = currentTime.getHours();
+      if (currentHour > 12) {
+        currentHour = currentHour - 12;
+        ampmCurrent = "pm";
+      }
+      let currentMinute = currentTime.getMinutes();
+      console.log(`${currentHour}:${currentMinute} ${ampmCurrent}`);
+
 
       // icon
 
